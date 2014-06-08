@@ -1,0 +1,372 @@
+<html ng-app="Site">
+<head>
+<title>James's Portfolio</title>
+
+<link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.3.0/pure-min.css">
+<!--<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.16/angular.min.js"></script>-->
+
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-49712791-1', 'olin.edu');
+  ga('send', 'pageview');
+
+</script>
+
+<style>
+
+.wrapper {
+	margin-left: auto;
+	margin-right: auto;
+	width: 800px;
+	font-family: Georgia;
+}
+
+.infobox {
+	margin: 20px;
+	margin-left: 20px;
+	padding: 20px;
+	border: 1px dotted #DDDDDD;
+	max-width: 700px;
+	background: #FEFEFE;
+	color: #333333;
+}
+
+.imgbox {
+	text-align: center;
+}
+
+.infobox ul li {
+	padding-top: 4px;
+}
+
+.infobox a {
+	text-decoration: none;
+}
+
+
+.bar {
+	height: 40px;
+	line-height: 40px;
+	background: #333333;
+	padding: 5px;
+	color: #DDDDDD;
+	padding-left: 15px;
+}
+
+.bar ul li {
+	list-style-type: none;
+	display: inline;
+}
+
+.project {
+	margin-top: 20px;
+	margin-bottom: 0px;
+}
+
+.desc {
+	font-style: italic;
+	margin-top: 0px;
+}
+
+
+.title {
+	width: 300px;
+	position: fixed;
+	left: 70px;
+	top: 230px;
+
+}
+
+.selfimg {
+	position:fixed;
+	top:10px;
+	left:60px;
+}
+
+.intro {
+	width: 200px;
+	display: block;
+	margin: 20px;
+	margin-right: 0px;
+	padding: 5px;
+	position: fixed;
+	left: 70px;
+	top: 290px;
+	text-align: left;
+}
+
+.contact {
+	width: 100px;
+	text-align: right;
+	position: fixed;
+	left: 180px;
+	top: 500px;
+}
+
+
+
+.ng-modal-overlay {
+  /* A dark translucent div that covers the whole screen */
+  position:fixed;
+  z-index:9999;
+  top:0;
+  left:0;
+  width:100%;
+  height:100%;
+  background-color:#000000;
+  opacity: 0.8;
+}
+.ng-modal-dialog {
+  /* A centered div above the overlay with a box shadow. */
+  z-index:10000;
+  position: fixed;
+  width: 50%; /* Default */
+
+  /* Center the dialog */
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -webkit-transform: translate(-50%, -50%);
+  -moz-transform: translate(-50%, -50%);
+
+  background-color: #fff;
+  box-shadow: 4px 4px 80px #000;
+}
+.ng-modal-dialog-content {
+  /*padding:10px;*/
+  text-align: left;
+}
+.ng-modal-close {
+  position: absolute;
+  top: 3px;
+  right: 5px;
+  padding: 5px;
+  cursor: pointer;
+  font-size: 120%;
+  display: inline-block;
+  font-weight: bold;
+  font-family: 'arial', 'sans-serif';
+}
+
+
+
+a, a:link {
+	text-decoration: underline;
+}
+
+a:visited {
+	color: #333333;
+}
+
+a:hover {
+	color: #AAAAAA;
+}
+
+a:hover img {
+	border: 2px solid #AAAAAA;
+	margin-left: -2px;
+	margin-top: -2px;
+	margin-right: -2px;
+	margin-bottom: -2px;
+}
+
+</style>
+
+</head>
+<body>
+
+<div class="wrapper" ng-controller="MyCtrl">
+
+	<div style="position:absolute;top:0px;left:0px;display:none">
+	<p><strong>Shown?</strong> {{myData.modalShown}}</p>
+	<p><strong>Hello</strong>: {{myData.hello}}</p>
+	<p><strong>Foo</strong>: {{myData.foo}}</p>
+	</div>
+
+	<img class="selfimg" src="self_sq.png" />
+
+	<h1 class="title">James Wu</h1>
+
+	<div class="contact">
+	<p>
+<script type="text/javascript" language="javascript">
+<!--
+// Email obfuscator script 2.1 by Tim Williams, University of Arizona
+// Random encryption key feature by Andrew Moulden, Site Engineering Ltd
+// This code is freeware provided these four comment lines remain intact
+// A wizard to generate this code is at http://www.jottings.com/obfuscator/
+{ coded = "Ig31b.DS@b8SL198b.Q7G9.1LS"
+  key = "jb97D5TYHC32gBvOJLhoXx8zifINueFMcq6VWsnlwrpkEQmAaPGK0dS14UtZyR"
+  shift=coded.length
+  link=""
+  for (i=0; i<coded.length; i++) {
+    if (key.indexOf(coded.charAt(i))==-1) {
+      ltr = coded.charAt(i)
+      link += (ltr)
+    }
+    else {     
+      ltr = (key.indexOf(coded.charAt(i))-shift+key.length) % key.length
+      link += (key.charAt(ltr))
+    }
+  }
+document.write("<a href='mailto:"+link+"'>Email</a>")
+}
+//-->
+</script><noscript>Sorry, you need Javascript on to email me.</noscript></p>
+	<p><a href="https://github.com/JimmyFW/">Github</a></p>
+	<p><a href="Resume_JamesWu_Summer2014.pdf">Resume</a></p>
+	</div>
+
+<modal-dialog show='myData.modalShown' width='800px' dialog-title='' on-close='logClose()'>
+	<img ng-src="{{ returnModalURI() }}" width="800" height="auto" />
+</modal-dialog>
+
+	<div class="intro">I'm a junior at Olin College. <p>I practice electrical prototyping and user-oriented design. <p>To me, design is a mixture of empathy and practicality.</div>
+
+	<!--<h2>Electronic Design</h2>-->
+	<div class="bar">
+		Electronics Design and Prototyping
+	</div>
+
+			<div class="infobox">
+				<div class="imgbox">
+					<a><img ng-click='setModal(1)' src="wienbridgelampphoto.jpg" width="275" height="auto" alt="Wien Bridge Oscillator with lamp" /></a>
+					<a><img ng-click='setModal(2)' src="wienbridgewolampphoto.jpg" width="420" height="auto" alt="Wien Bridge Oscillator, adjustable frequency" /></a>
+				</div>
+				<h3 class="project">PCB Design of the Wien Bridge Oscillator</h3>
+				<p class="desc">- I took two circuit descriptions from a Linear Technology AppNote and made them into fully working, portable PCBs. The Wien Bridge Oscillator creates very pure, very stable sine waves.</p>
+				<p></p>
+				<ul>
+					<li><a href="https://docs.google.com/document/d/1WF07tO66W-W4oG0kzkVrTaaYBfELqk6hCzBJ1Df6stM/pub" target="_blank">LTSpice simulation</a></li>
+					<li><a href="https://docs.google.com/document/d/1MTt1H5m0OT3eay2O319SDvqdRXX_aHEhbj3VMiw0mK4/pub" target="_blank">Engineering report: Schematic to PCB</a></li>
+					<li><a href="http://youtu.be/7DlrP9dxeyQ" target="_blank">The lamp oscillator in action</a></li>
+				</ul>
+				<p>EE Prototyping, Olin College, Spring 2014</p>
+			</div>
+
+			<div class="infobox">
+				<div class="imgbox">
+					<a><img ng-click='setModal(3)' src="deadbugphotosoft.jpg" width="550" height="auto" alt="More images coming March 23rd, 2014!" /></a>
+				</div>
+				<h3 class="project">"Deadbug" style construction</h3>
+				<p class="desc">Deadbugging is a construction style where individual components are soldered together directly. This allows for an artistic approach towards creating circuits.</p>
+				<p class="desc">This is a battery-powered avalanche pulse generator. Its signature fast-rising pulses are useful in testing instruments and connectors when you need a fast response.</p>
+				<p></p>
+				<ul>
+					<li><a href="https://docs.google.com/document/d/1ducR8U_LleywwqHIYWsvbsq-C0L7TROFwt28vvp3IqM/pub">More information</a></li>
+				</ul>
+				<p>EE Prototyping, Olin College, Spring 2014</p>
+			</div>
+
+	<div class="bar">
+		Interface Design
+	</div>
+	<!--<h2>Interface Design</h2>-->
+		<div class="infobox">
+				<div class="imgbox">
+					<a><img ng-click='setModal(4)' src="afterspace_ipad.png" width="500" height="auto" /></a>
+				</div>
+				<h3 class="project">The Afterthink Engine</h3>
+				<p class="desc">A restaurant ordering display made for a large touchscreen table.</p>
+				<p>My team investigated how people decide on restaurant orders when going out as a group. We designed a touchscreen table which a whole group of patrons can interact with collaboratively.</p>
+				<p>I built a prototype testing interface which represented the table's common area on an iPad, and the table's menus as apps.</p>
+				<ul>
+					<li><a href="http://hfid.olin.edu/sa2014/s_engr3220-old-spice/#/home">The Design Process</a></li>
+					<li><a href="https://github.com/JimmyFW/afterthink-space">Github repository (group interactive)</a></li>
+					<li><a href="https://github.com/JimmyFW/afterthink-engine">Github repository (individual menu)</a></li>
+				</ul>
+				<h4>Usability test demo</h4><a href="http://afterspace.herokuapp.com/#/home" target="_blank"><img src="afterspace_demo_image.jpg" width="400" height="auto" /></a>
+					<p>Try having multiple people on different devices open the app.</p>
+					<p>Supported: Firefox (laptop), Chrome (laptop), and Safari (iPad)</p>
+					<ul>
+						<li><a href="http://afterspace.herokuapp.com/#/home" target="_blank">Table View</a></li>
+						<li><a href="http://afterthink.herokuapp.com/" target="_blank">Menu View</a></li>
+					</ul>
+				</ul>
+				<p>Human Factors in Interface Design, Olin College, Fall 2013</p>
+		</div>
+
+	<div class="bar">
+		Software
+	</div>
+	<!--<h2>Software</h2>-->
+			<div class="infobox">
+				<div class="imgbox">
+					<a><img ng-click='setModal(5)' src="arxgraph.png" width="500" height="auto" /></a>
+				</div>
+				<h3 class="project">ArxivGraph</h3>
+				<p class="desc">Graph search for academic articles on <a href="http://arxiv.org/">http://arxiv.org</a>.</p>
+				<p>Pictured above is a citation graph of ~2000 research papers in physics. Each article is a circle. The bigger the circle, the more often it has been cited by other articles. You can see which articles are connected to each other through citation by looking at the connecting lines.
+				<p>Spring 2013, Artificial Intellgience</p>
+				<ul>
+					<li><a href="http://arxivgraph.herokuapp.com/">Open the app<p></p><br /><img src="arxiv.png" width="300" height="auto" /></a></li>
+					<li><a href="https://github.com/JimmyFW/journalgraph">Github repository</a></li>
+				</ul>
+			</div>
+			<div class="infobox">
+				<div class="imgbox">
+					<img src="schoen.png" width="500" height="auto" />
+				</div>
+				<h3 class="project">Provenance History for Rare Manuscripts</h3>
+				<p class="desc">Using data given by the Penn Libraries' Schoenberg database of manuscripts, we created a data visualization of manuscript exchanges, tracing each manuscript back to its earliest known date.</p>
+				<p>Fall 2013 - Awarded "Best use of Library Data" at PennApps hackathon</p>
+				<ul>
+					<li><a href="http://schoenberg.herokuapp.com/arcs/">Open the app</a></li>
+					<li><a href="https://github.com/samzhang111/schoenberg-visualization">Github repository</a></li>
+				</ul>
+			</div>
+
+	<h2>Miscellaneous Studies</h2>
+	<div class="infobox">
+		<ul>
+			<li>
+				<h3 class="project"><a href="CalculatorChipReport.pdf">Material packaging analysis</a></h3> "Electronic Packaging of a Handheld Calculator" - Materials Science, Olin College, Fall 2013
+			</li>
+			<li>
+				<h3 class="project"><a href="Helix_final.pdf">Biophysics research with Zhenya Zastavker</a></h3> - a literature review and study, Olin College, Spring 2012
+			</li>
+			<li>
+				<h3 class="project"><a href="proj2.pdf">Gambling/Investment Strategy - a mathematical approach</a></h3> "Optimizing long-term returns from betting in the Double or Quarter game" - Stochastic Processes, Olin College, Spring 2012
+			</li>
+			<li>
+				<h3 class="project"><a href="reportJ.pdf">Particle physics simulation</a></h3> "Simulating secondary electron production in particle-foil collisions" - a research project - Physics Dept., University of Virginia, Summer 2011
+			</li>
+			<li>
+				<h3 class="project"><a href="MOOC_review.pdf">Course Review - Social Network Analysis</a></h3> - a course offered by Lada Adamic on Coursera, University of Michigan, Spring 2013 <br/><a href="MOOC_certificate.pdf">View Certificate</a>
+			</li>
+			<li>
+				<h3 class="project"><a href="https://github.com/JimmyFW/fast-SVD">fastSVD</a></h3> - a Verilog hardware description of a CPU optimized to compute Singular Value Decomposition, Computer Architecture, Fall 2012
+				<br/><a href="fastSVD.pdf">View Report</a>
+			</li>
+			<li>
+				<div class="imgbox">
+				</div>
+				<h3 class="project"><a href="https://docs.google.com/document/d/18QCk-lsa1oIDV19qb5CLNZ9ohrDQ2tzuU8zQeeYPOpc/pub">AM Radio Receiver</a></h3>
+				<p>- constructed a tunable AM receiver, using discrete components and a signal generator.</p>
+				<img src="AMRad3.jpg" width="300" height="auto" />
+				<p>Analog and Digital Communications, Olin College, Fall 2013</p>
+			</li>
+		</ul>
+	</div>
+
+	<div class="infobox">
+		<p><img src="20.png" alt="cs1120">
+		<p>"Blue Smoke"
+		<p>A fractal I made in the Scheme programming language.
+	</div>
+
+</div>
+
+
+<script type="text/javascript" src="public/angular.min.js"></script>
+<script type="text/javascript" src="public/ng-modal.js"></script>
+<!--<script type="text/javascript" src="public/scrollTo.min.js"></script>-->
+<script type="text/javascript" src="public/portfolio.js"></script>
+
+</body>
+</html>
