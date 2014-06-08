@@ -15,12 +15,12 @@ Site.controller('MyCtrl', function($scope) {
 
           $scope.currentModalIndex = 1;
           $scope.imageMapping = {
-            1: "wienbridgelampphoto.jpg",
-            2: "wienbridgewolampphoto.jpg",
-            3: "deadbugphotosoft.jpg",
-            4: "afterspace_ipad.png",
-            5: "arxgraph.png",
-            6: "schoen.png"
+            1: "public/imgs/wienbridgelampphoto.jpg",
+            2: "public/imgs/wienbridgewolampphoto.jpg",
+            3: "public/imgs/deadbugphotosoft.jpg",
+            4: "public/imgs/afterspace_ipad.png",
+            5: "public/imgs/arxgraph.png",
+            6: "public/imgs/schoen.png"
           };
 
 
