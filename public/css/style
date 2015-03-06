@@ -1,0 +1,166 @@
+
+.wrapper {
+	margin-left: auto;
+	margin-right: auto;
+	width: 800px;
+	font-family: Georgia;
+}
+
+.infobox {
+	margin: 20px;
+	margin-left: 20px;
+	padding: 20px;
+	border: 1px dotted #DDDDDD;
+	max-width: 700px;
+	background: #FEFEFE;
+	color: #333333;
+}
+
+.imgbox {
+	text-align: center;
+}
+
+.infobox ul li {
+	padding-top: 4px;
+}
+
+.infobox a {
+	text-decoration: none;
+}
+
+
+.bar {
+	height: 40px;
+	line-height: 40px;
+	background: #333333;
+	padding: 5px;
+	color: #DDDDDD;
+	padding-left: 15px;
+}
+
+.bar ul li {
+	list-style-type: none;
+	display: inline;
+}
+
+.project {
+	margin-top: 20px;
+	margin-bottom: 0px;
+}
+
+.desc {
+	font-style: italic;
+	margin-top: 0px;
+}
+
+
+.title {
+	/*width: 300px;*/
+	/*
+	position: fixed;
+	left: 70px;
+	top: 230px;
+	*/
+
+}
+
+.selfimg {
+	/*
+	position:fixed;
+	top:10px;
+	left:60px;
+	*/
+}
+
+.intro {
+	/*width: 200px;*/
+	/*display: block;*/
+	margin: 20px;
+	margin-right: 0px;
+	padding: 5px;
+	/*
+	position: fixed;
+	left: 70px;
+	top: 290px;
+	*/
+	text-align: left;
+}
+
+.contact {
+	margin: 20px;
+	margin-left: 0;
+	/*width: 100px;*/
+	/*text-align: right;*/
+	/*
+	position: fixed;
+	left: 180px;
+	top: 500px;
+	*/
+}
+
+
+
+.ng-modal-overlay {
+  /* A dark translucent div that covers the whole screen */
+  position:fixed;
+  z-index:9999;
+  top:0;
+  left:0;
+  width:100%;
+  height:100%;
+  background-color:#000000;
+  opacity: 0.8;
+}
+.ng-modal-dialog {
+  /* A centered div above the overlay with a box shadow. */
+  z-index:10000;
+  position: fixed;
+  width: 50%; /* Default */
+
+  /* Center the dialog */
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -webkit-transform: translate(-50%, -50%);
+  -moz-transform: translate(-50%, -50%);
+
+  background-color: #fff;
+  box-shadow: 4px 4px 80px #000;
+}
+.ng-modal-dialog-content {
+  /*padding:10px;*/
+  text-align: left;
+}
+.ng-modal-close {
+  position: absolute;
+  top: 3px;
+  right: 5px;
+  padding: 5px;
+  cursor: pointer;
+  font-size: 120%;
+  display: inline-block;
+  font-weight: bold;
+  font-family: 'arial', 'sans-serif';
+}
+
+
+
+a, a:link {
+	text-decoration: underline;
+}
+
+a:visited {
+	color: #333333;
+}
+
+a:hover {
+	color: #AAAAAA;
+}
+
+a:hover img {
+	border: 2px solid #AAAAAA;
+	margin-left: -2px;
+	margin-top: -2px;
+	margin-right: -2px;
+	margin-bottom: -2px;
+}
