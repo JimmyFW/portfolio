@@ -3,6 +3,7 @@
 <title>James's Portfolio</title>
 
 <link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.3.0/pure-min.css">
+<link rel="stylesheet" href="public/css/bootstrap.min.css">
 <!--<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.16/angular.min.js"></script>-->
 
 
@@ -75,10 +76,12 @@
 
 
 .title {
-	width: 300px;
+	/*width: 300px;*/
+	/*
 	position: fixed;
 	left: 70px;
 	top: 230px;
+	*/
 
 }
 
@@ -91,8 +94,8 @@
 }
 
 .intro {
-	width: 200px;
-	display: block;
+	/*width: 200px;*/
+	/*display: block;*/
 	margin: 20px;
 	margin-right: 0px;
 	padding: 5px;
@@ -105,8 +108,10 @@
 }
 
 .contact {
-	width: 100px;
-	text-align: right;
+	margin: 20px;
+	margin-left: 0;
+	/*width: 100px;*/
+	/*text-align: right;*/
 	/*
 	position: fixed;
 	left: 180px;
@@ -196,18 +201,23 @@ a:hover img {
 
 	<div class="wrapper">
 
-		<img class="selfimg" src="https://dl.dropboxusercontent.com/s/zzhrhexdrs2r65p/self_sq_bw.png?dl=0" />
+		<div class="row">
+			<div class="col-sm-3">
+				<img class="selfimg" src="https://dl.dropboxusercontent.com/s/zzhrhexdrs2r65p/self_sq_bw.png?dl=0" width="175" />
+			</div>
 
-		<h1 class="title">James Wu</h1>
+			<div class="col-sm-7">
+				<h1 class="title">James Wu</h1>
 
-		<div class="contact">
-		<p id="email"></p>
-		<noscript>Sorry, you need Javascript on to email me.</noscript></p>
-		<p><a href="https://github.com/JimmyFW/">Github</a></p>
-		<p><a href="Resume_JamesWu_Summer2014.pdf">Resume</a></p>
-		</div>
+				<div class="intro">I'm a senior at the Olin College of Engineering. <p>I practice electrical prototyping and user-oriented design. <p>To me, design is a mixture of empathy and practicality.</div>
+			</div>
 
-		<div class="intro">I'm a senior at Olin College of Engineering. <p>I practice electrical prototyping and user-oriented design. <p>To me, design is a mixture of empathy and practicality.</div>
+			<div class="contact col-sm-1">
+					<p id="email"></p>
+					<noscript>Sorry, you need Javascript on to email me.</noscript></p>
+					<p><a href="https://github.com/JimmyFW/">Github</a></p>
+					<p><a href="Resume_JamesWu_Summer2014.pdf">Resume</a></p>
+			</div>
 
 	</div> <!-- end wrapper -->
 
