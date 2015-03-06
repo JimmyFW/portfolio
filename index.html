@@ -83,9 +83,11 @@
 }
 
 .selfimg {
+	/*
 	position:fixed;
 	top:10px;
 	left:60px;
+	*/
 }
 
 .intro {
@@ -94,18 +96,22 @@
 	margin: 20px;
 	margin-right: 0px;
 	padding: 5px;
+	/*
 	position: fixed;
 	left: 70px;
 	top: 290px;
+	*/
 	text-align: left;
 }
 
 .contact {
 	width: 100px;
 	text-align: right;
+	/*
 	position: fixed;
 	left: 180px;
 	top: 500px;
+	*/
 }
 
 
@@ -180,20 +186,42 @@ a:hover img {
 </head>
 <body>
 
-<div class="wrapper" ng-controller="MyCtrl">
+<div ng-controller="MyCtrl">
 
 	<div style="position:absolute;top:0px;left:0px;display:none">
-	<p><strong>Shown?</strong> {{myData.modalShown}}</p>
-	<p><strong>Hello</strong>: {{myData.hello}}</p>
-	<p><strong>Foo</strong>: {{myData.foo}}</p>
+		<p><strong>Shown?</strong> {{myData.modalShown}}</p>
+		<p><strong>Hello</strong>: {{myData.hello}}</p>
+		<p><strong>Foo</strong>: {{myData.foo}}</p>
 	</div>
 
-	<img class="selfimg" src="https://dl.dropboxusercontent.com/s/bc849xm9y1y7ae3/self_sq.png?dl=0" />
+	<div class="wrapper">
 
-	<h1 class="title">James Wu</h1>
+		<img class="selfimg" src="https://dl.dropboxusercontent.com/s/zzhrhexdrs2r65p/self_sq_bw.png?dl=0" />
 
-	<div class="contact">
-	<p>
+		<h1 class="title">James Wu</h1>
+
+		<div class="contact">
+		<p id="email"></p>
+		<noscript>Sorry, you need Javascript on to email me.</noscript></p>
+		<p><a href="https://github.com/JimmyFW/">Github</a></p>
+		<p><a href="Resume_JamesWu_Summer2014.pdf">Resume</a></p>
+		</div>
+
+		<div class="intro">I'm a senior at Olin College of Engineering. <p>I practice electrical prototyping and user-oriented design. <p>To me, design is a mixture of empathy and practicality.</div>
+
+	</div> <!-- end wrapper -->
+
+<modal-dialog show='myData.modalShown' width='800px' dialog-title='' on-close='logClose()'>
+	<img ng-src="{{ returnModalURI() }}" width="800" height="auto" />
+</modal-dialog>
+
+</div> <!-- end MyCtrl -->
+
+<script type="text/javascript" src="public/js/angular.min.js"></script>
+<script type="text/javascript" src="public/js/ng-modal.js"></script>
+<!--<script type="text/javascript" src="public/scrollTo.min.js"></script>-->
+<script type="text/javascript" src="public/js/portfolio.js"></script>
+
 <script type="text/javascript" language="javascript">
 <!--
 // Email obfuscator script 2.1 by Tim Williams, University of Arizona
@@ -214,133 +242,10 @@ a:hover img {
       link += (key.charAt(ltr))
     }
   }
-document.write("<a href='mailto:"+link+"'>Email</a>")
+document.getElementById("email").innerHTML = "<a href='mailto:"+link+"'>Email</a>";
 }
 //-->
-</script><noscript>Sorry, you need Javascript on to email me.</noscript></p>
-	<p><a href="https://github.com/JimmyFW/">Github</a></p>
-	<p><a href="Resume_JamesWu_Summer2014.pdf">Resume</a></p>
-	</div>
-
-<modal-dialog show='myData.modalShown' width='800px' dialog-title='' on-close='logClose()'>
-	<img ng-src="{{ returnModalURI() }}" width="800" height="auto" />
-</modal-dialog>
-
-	<div class="intro">I'm a senior at Olin College of Engineering. <p>I practice electrical prototyping and user-oriented design. <p>To me, design is a mixture of empathy and practicality.</div>
-
-	<!--<h2>Electronic Design</h2>-->
-	<div class="bar">
-		Wien Bridge Oscillator - PCB
-	</div>
-
-			<div class="infobox">
-				<div class="imgbox">
-					<a><img ng-click='setModal(1)' src="https://dl.dropboxusercontent.com/s/gyd76kjs78wrwbm/wienbridgelampphoto.jpg?dl=0" width="275" height="auto" alt="Wien Bridge Oscillator with lamp" /></a>
-					<a><img ng-click='setModal(2)' src="https://dl.dropboxusercontent.com/s/1g9bl96zo4rw03o/wienbridgewolampphoto.jpg?dl=0" width="420" height="auto" alt="Wien Bridge Oscillator, adjustable frequency" /></a>
-				</div>
-				<p class="desc">- I took two circuit descriptions from a Linear Technology AppNote and made them into fully working, portable PCBs. The Wien Bridge Oscillator creates very pure, very stable sine waves.</p>
-				<p></p>
-				<ul>
-					<li><a href="https://docs.google.com/document/d/1WF07tO66W-W4oG0kzkVrTaaYBfELqk6hCzBJ1Df6stM/pub" target="_blank">LTSpice simulation</a></li>
-					<li><a href="https://docs.google.com/document/d/1MTt1H5m0OT3eay2O319SDvqdRXX_aHEhbj3VMiw0mK4/pub" target="_blank">Engineering report: Schematic to PCB</a></li>
-					<li><a href="http://youtu.be/7DlrP9dxeyQ" target="_blank">The lamp oscillator in action</a></li>
-				</ul>
-				<p>EE Prototyping, Olin College, Spring 2014</p>
-			</div>
-
-	<div class="bar">
-		Avalanche Pulse Generator - Deadbug construction
-	</div>
-
-			<div class="infobox">
-				<div class="imgbox">
-					<a><img ng-click='setModal(3)' src="public/imgs/deadbugphotosoft.jpg" width="550" height="auto" alt="More images coming March 23rd, 2014!" /></a>
-				</div>
-				<p class="desc">Deadbugging is a construction style where individual components are soldered together directly. This allows for an artistic approach towards creating circuits.</p>
-				<p class="desc">This is a battery-powered avalanche pulse generator. Its signature fast-rising pulses are useful in testing instruments and connectors when you need a fast response.</p>
-				<p></p>
-				<ul>
-					<li><a href="https://docs.google.com/document/d/1ducR8U_LleywwqHIYWsvbsq-C0L7TROFwt28vvp3IqM/pub">More information</a></li>
-				</ul>
-				<p>EE Prototyping, Olin College, Spring 2014</p>
-			</div>
-
-
-	<div class="bar">
-		ArxivGraph
-	</div>
-	<!--<h2>Software</h2>-->
-			<div class="infobox">
-				<div class="imgbox">
-					<a><img ng-click='setModal(5)' src="https://dl.dropboxusercontent.com/s/fonrcwd8qi93g15/arxgraph.png?dl=0" width="500" height="auto" /></a>
-				</div>
-				<p class="desc">Graph search for academic articles on <a href="http://arxiv.org/">http://arxiv.org</a>.</p>
-				<p>Pictured above is a citation graph of ~2000 research papers in physics. Each article is a circle. The bigger the circle, the more often it has been cited by other articles. You can see which articles are connected to each other through citation by looking at the connecting lines.
-				<p>Spring 2013, Artificial Intellgience</p>
-				<ul>
-					<li><a href="http://arxivgraph.herokuapp.com/">Open the app<p></p><br /><img src="https://dl.dropboxusercontent.com/s/9vjoc5nqg8fd8do/arxiv.png?dl=0" width="300" height="auto" /></a></li>
-					<li><a href="https://github.com/JimmyFW/journalgraph">Github repository</a></li>
-				</ul>
-			</div>
-			<div class="infobox">
-				<div class="imgbox">
-					<img src="public/imgs/schoen.png" width="500" height="auto" />
-				</div>
-				<h3 class="project">Provenance History for Rare Manuscripts</h3>
-				<p class="desc">Using data given by the Penn Libraries' Schoenberg database of manuscripts, we created a data visualization of manuscript exchanges, tracing each manuscript back to its earliest known date.</p>
-				<p>Fall 2013 - Awarded "Best use of Library Data" at PennApps hackathon</p>
-				<ul>
-					<li><a href="http://schoenberg.herokuapp.com/arcs/">Open the app</a></li>
-					<li><a href="https://github.com/samzhang111/schoenberg-visualization">Github repository</a></li>
-				</ul>
-			</div>
-
-	<h2>Miscellaneous Studies</h2>
-	<div class="infobox">
-		<ul>
-			<li>
-				<h3 class="project"><a href="CalculatorChipReport.pdf">Material packaging analysis</a></h3> "Electronic Packaging of a Handheld Calculator" - Materials Science, Olin College, Fall 2013
-			</li>
-			<li>
-				<h3 class="project"><a href="Helix_final.pdf">Biophysics research with Zhenya Zastavker</a></h3> - a literature review and study, Olin College, Spring 2012
-			</li>
-			<li>
-				<h3 class="project"><a href="proj2.pdf">Gambling/Investment Strategy - a mathematical approach</a></h3> "Optimizing long-term returns from betting in the Double or Quarter game" - Stochastic Processes, Olin College, Spring 2012
-			</li>
-			<li>
-				<h3 class="project"><a href="reportJ.pdf">Particle physics simulation</a></h3> "Simulating secondary electron production in particle-foil collisions" - a research project - Physics Dept., University of Virginia, Summer 2011
-			</li>
-			<li>
-				<h3 class="project"><a href="MOOC_review.pdf">Course Review - Social Network Analysis</a></h3> - a course offered by Lada Adamic on Coursera, University of Michigan, Spring 2013 <br/><a href="MOOC_certificate.pdf">View Certificate</a>
-			</li>
-			<li>
-				<h3 class="project"><a href="https://github.com/JimmyFW/fast-SVD">fastSVD</a></h3> - a Verilog hardware description of a CPU optimized to compute Singular Value Decomposition, Computer Architecture, Fall 2012
-				<br/><a href="fastSVD.pdf">View Report</a>
-			</li>
-			<li>
-				<div class="imgbox">
-				</div>
-				<h3 class="project"><a href="https://docs.google.com/document/d/18QCk-lsa1oIDV19qb5CLNZ9ohrDQ2tzuU8zQeeYPOpc/pub">AM Radio Receiver</a></h3>
-				<p>- constructed a tunable AM receiver, using discrete components and a signal generator.</p>
-				<img src="public/imgs/AMRad3.jpg" width="300" height="auto" />
-				<p>Analog and Digital Communications, Olin College, Fall 2013</p>
-			</li>
-		</ul>
-	</div>
-
-	<div class="infobox">
-		<p><img src="public/imgs/20.png" alt="cs1120">
-		<p>"Blue Smoke"
-		<p>A fractal I made in the Scheme programming language.
-	</div>
-
-</div>
-
-
-<script type="text/javascript" src="public/js/angular.min.js"></script>
-<script type="text/javascript" src="public/js/ng-modal.js"></script>
-<!--<script type="text/javascript" src="public/scrollTo.min.js"></script>-->
-<script type="text/javascript" src="public/js/portfolio.js"></script>
+</script>
 
 </body>
 </html>
